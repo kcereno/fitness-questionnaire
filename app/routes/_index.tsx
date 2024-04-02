@@ -17,7 +17,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(5);
   const [form, setForm] = useState<FormType>({});
 
   const sections: SectionNameTypes[] = [
@@ -45,6 +45,11 @@ export default function Index() {
     setCurrentSectionIndex(currentSectionIndex + 1);
   };
 
+  const handleResetForm = () => {
+    setCurrentSectionIndex(0);
+    setForm({});
+  };
+
   const renderCurrentSection = () => {
     switch (currentSection) {
       case 'intro':
@@ -60,7 +65,12 @@ export default function Index() {
           />
         );
       case 'summary':
-        return <FormSummary form={form} />;
+        return (
+          <FormSummary
+            form={form}
+            resetForm={handleResetForm}
+          />
+        );
       default:
         return null;
     }
@@ -71,9 +81,9 @@ export default function Index() {
   return (
     <>
       <ProgressBar percent={progressPercentage} />
-      <main className="h-screen flex flex-col max-w-4xl mx-auto">
-        <div className="flex-grow flex items-center">
-          <div className="mx-6 w-full">{currentSectionComponent}</div>
+      <main className="flex flex-col h-screen max-w-4xl mx-auto">
+        <div className="flex items-center flex-grow">
+          <div className="w-full mx-6">{currentSectionComponent}</div>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700"></div>
       </main>
