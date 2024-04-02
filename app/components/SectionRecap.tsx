@@ -18,10 +18,10 @@ function SectionRecap({
   return (
     <div>
       <div>
-        <h1 className="text-2xl mb-4">
+        <h1 className="mb-4 text-2xl">
           Just to recap, confirm if the following is correct
         </h1>
-        <ul className="list-disc ml-4 space-y-2">
+        <ul className="ml-4 space-y-2 list-disc">
           {Object.keys(form).map((key) => {
             const question = questions.find(
               (question) => question.id === key
@@ -54,9 +54,14 @@ function SectionRecap({
           })}
         </ul>
       </div>
-      <div className="flex mt-10 gap-6">
-        <Button onClick={confirmData}>Looks Good</Button>
-        <Button onClick={amendData}>Change Something</Button>
+      <div className="flex gap-6 mt-10">
+        <Button onClick={confirmData}>Looks Good!</Button>
+        <Button
+          variant="danger"
+          onClick={amendData}
+        >
+          Change Something
+        </Button>
       </div>
     </div>
   );
