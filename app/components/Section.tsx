@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 
 import SectionQuestions from '~/components/SectionQuestions';
 
-import { FormDataType, SectionFormType } from '~/types/form';
+import { FormDataType, FormType } from '~/types/form';
 import { QuestionDataType } from '~/types/questions';
 import SectionRecap from './SectionRecap';
 
 type SectionProps = {
   questionData: QuestionDataType;
-  updateMainForm: (formData: SectionFormType) => void;
+  updateMainForm: (formData: FormType) => void;
 };
 
 function Section({
@@ -36,7 +36,7 @@ function Section({
   };
 
   const handleConfirm = () => {
-    const formData: SectionFormType = {
+    const formData: FormType = {
       [category]: { ...sectionForm },
     };
     updateMainForm(formData);
@@ -54,7 +54,7 @@ function Section({
   };
 
   return (
-    <div>
+    <div className="fade-in">
       {!formComplete && (
         <SectionQuestions
           {...defaultProps}

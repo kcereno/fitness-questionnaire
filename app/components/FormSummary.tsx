@@ -24,7 +24,7 @@ function FormSummary({ form, resetForm }: FormSummaryProps) {
               All done! Lets just do a quick recap to make sure all your
               information is correct
             </h1>
-            <div className="h-full overflow-y-scroll border border-gray-400 rounded-xl">
+            <div className="h-full overflow-y-scroll border border-gray-400">
               <div className="bg-white h-[600px]">
                 <ul className="p-10 list-disc space-y-14">
                   {Object.keys(form).map((section: string) => {

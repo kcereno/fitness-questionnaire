@@ -9,9 +9,9 @@ type IntroProps = {
 function Intro({ changeSection }: IntroProps) {
   useKeyPress('Enter', changeSection);
   return (
-    <div className="">
-      <div className="text-2xl space-y-6">
-        <p className="text-center font-bold">
+    <div className="fade-in">
+      <div className="space-y-6 text-2xl">
+        <p className="font-bold text-center">
           🌟 Welcome to Your Fitness Journey! 🌟
         </p>
         <p>

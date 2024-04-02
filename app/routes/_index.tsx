@@ -17,7 +17,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function Index() {
-  const [currentSectionIndex, setCurrentSectionIndex] = useState(5);
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [form, setForm] = useState<FormType>({});
 
   const sections: SectionNameTypes[] = [
