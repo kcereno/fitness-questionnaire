@@ -32,7 +32,6 @@ export default function Index() {
   const progressPercentage = decimalToPercent(
     (currentSectionIndex + 1) / sections.length
   );
-  console.log('Index ~ progressPercentage:', progressPercentage);
 
   const currentSection = sections[currentSectionIndex];
 
