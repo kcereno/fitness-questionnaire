@@ -54,13 +54,19 @@ function SectionRecap({
           })}
         </ul>
       </div>
-      <div className="flex gap-6 mt-10">
-        <Button onClick={confirmData}>Looks Good!</Button>
+      <div className="flex gap-2 mt-10">
         <Button
+          className="w-32"
+          onClick={confirmData}
+        >
+          Continue
+        </Button>
+        <Button
+          className="w-32"
           variant="danger"
           onClick={amendData}
         >
-          Change Something
+          Redo
         </Button>
       </div>
     </div>
